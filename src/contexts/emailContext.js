@@ -17,11 +17,16 @@ export const EmailProvider = ({children})=>{
         }
     }
 
+    const markHandler = (id) =>{
+        const  newReadMails= emailData.mails.map((mail) => mail.id=== Number(id) ? {...mail, read: !mail.read} : mail)
+        setEmailData({...emailData, mails: [...newReadMails]});
+    }
+
     useEffect(()=>{
         getData();
     },[])
     return (
-        <EmailContext.Provider value={{emailData}}>
+        <EmailContext.Provider value={{emailData, markHandler}}>
             {children}
         </EmailContext.Provider>
     )
