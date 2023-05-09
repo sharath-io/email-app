@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import {NavLink} from 'react-router-dom';
+
 import {EmailContext} from '../index';
 export function Sent(){
     const {emailData:{sentMails}} = useContext(EmailContext);
@@ -7,7 +9,9 @@ export function Sent(){
             <h2>Sent </h2>
             <ul>
                 {
-                    sentMails.map(({id,subject})=> <li><p>{subject.slice(3)}</p></li>)
+                    sentMails.map(({id,subject})=> <li key={id}>
+                        <NavLink to={`/emailDetails/${id}`}><p>{subject.slice(3)}</p></NavLink>
+                        </li>)
                 }
             </ul>
         </div>

@@ -13,7 +13,6 @@ root.render(
       <EmailProvider>
         <App />
       </EmailProvider>
-    
     </Router>
   </React.StrictMode>
 );
