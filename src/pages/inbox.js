@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import { EmailContext } from '../contexts/emailContext';
+import { EmailContext } from '../index';
 
 export function Inbox(){
     const {emailData:{mails}, markHandler} = useContext(EmailContext);
