@@ -1,0 +1,17 @@
+const MailComponent = ({ mail }) => {
+  const {
+    from: { name, email },
+    subject,
+    short_description,
+  } = mail;
+  return (
+    <div className="m-5 p-5 bg-white rounded-lg">
+      <h1>
+        From: {name} {email}
+      </h1>
+      <h2>Subject: {subject}</h2>
+      <p>Description: - {short_description}</p>
+    </div>
+  );
+};
+export default MailComponent;
